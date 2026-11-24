@@ -3,19 +3,274 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pulso</title>
+<title>Pulso · O treino que muda com você</title>
+<meta name="description" content="O Pulso monta seu plano de treino pelo seu objetivo, sua rotina e a métrica que importa para você, e ajusta a cada 15 dias. Acesso por convite.">
+<meta name="theme-color" content="#FAF9F6">
+<meta property="og:title" content="Pulso · O treino que muda com você">
+<meta property="og:description" content="Plano de treino que se ajusta a cada 15 dias pela métrica que importa para você. Acesso por convite.">
+<meta property="og:url" content="https://pulsoapp.me/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<link rel="canonical" href="https://pulsoapp.me/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E41D50' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2'/%3E%3C/svg%3E">
 <style>
-  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #FAF9F6; color: #171717; font: 16px/1.6 Inter, system-ui, -apple-system, sans-serif; }
-  main { padding: 32px 16px; text-align: center; }
-  h1 { font-size: 40px; margin: 0; letter-spacing: -0.04em; }
-  p { color: #6B6B6B; margin: 4px 0 0; }
+body{margin:0;background:#FAF9F6}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+[id]{scroll-margin-top:16px}
+.pg{width:100%;background:#FAF9F6;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#171717;-webkit-text-size-adjust:100%}
+.pg *{box-sizing:border-box}
+.pg a{color:#B8123F}.pg a:hover{color:#8F0E31}
+.wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+.nav{display:flex;align-items:center;gap:24px;min-height:72px}
+.logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;letter-spacing:-0.01em;color:#171717;text-decoration:none}
+.navlinks{display:none;gap:4px;margin-left:auto}
+.navlinks a{min-height:44px;padding:0 12px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#4A4A4A;text-decoration:none;border-radius:12px}
+.navlinks a:hover{color:#171717;background:#F1ECE8}
+.navcta{margin-left:auto}
+.btn{min-height:52px;padding:0 22px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:16px;font-weight:700;text-decoration:none;border:none;font-family:inherit;cursor:pointer}
+.pg a.btn-p,.btn-p{background:#E41D50;color:#FFFFFF}.pg a.btn-p:hover{background:#C9163F;color:#FFFFFF}
+.pg a.btn-s,.btn-s{background:#FFFFFF;color:#171717;box-shadow:inset 0 0 0 1px #E4DED8}.pg a.btn-s:hover{color:#171717;box-shadow:inset 0 0 0 1.5px #171717}
+.btn-sm{min-height:44px;padding:0 16px;font-size:15px}
+.hero{display:grid;gap:40px;padding-top:32px;padding-bottom:56px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:0.08em;color:#B8123F}
+.h1{margin:12px 0 0;font-size:40px;line-height:44px;font-weight:800;letter-spacing:-0.025em}
+.h1 em{font-style:normal;color:#E41D50}
+.lead{margin:16px 0 0;font-size:18px;line-height:27px;color:#4A4A4A;max-width:520px}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.fine{margin-top:14px;font-size:13px;color:#5F5F5F}
+.phonebox{position:relative;display:flex;justify-content:center;padding:24px 0}
+.blob{position:absolute;inset:0 6% 0 6%;border-radius:32px;background:#F4DDE3}
+.phone{position:relative;width:300px;border-radius:40px;background:#171717;padding:10px;box-shadow:0 24px 60px rgba(23,23,23,0.22)}
+.screen{border-radius:31px;background:#FAF9F6;overflow:hidden;padding:18px 14px 14px;display:flex;flex-direction:column;gap:10px}
+.chip{min-height:28px;padding:0 12px;border-radius:999px;display:inline-flex;align-items:center;font-size:12px;font-weight:700}
+.phonebox{overflow:visible}
+.float{position:absolute;z-index:1;padding:12px 14px;border-radius:16px;background:#FFFFFF;box-shadow:0 10px 30px rgba(23,23,23,0.12);display:none;align-items:center;gap:10px;font-size:13px;font-weight:600}
+.sec{padding-top:64px;padding-bottom:64px}
+.h2{margin:0;font-size:30px;line-height:36px;font-weight:800;letter-spacing:-0.02em}
+.sub{margin:12px 0 0;font-size:17px;line-height:25px;color:#4A4A4A;max-width:620px}
+.metrics{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.metrics span{min-height:44px;padding:0 16px;border-radius:999px;background:#FFFFFF;box-shadow:inset 0 0 0 1px #E4DED8;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600}
+.metrics span.on{background:#171717;color:#FFFFFF;box-shadow:none}
+.steps{display:grid;gap:12px;margin:32px 0 0;padding:0;list-style:none}
+.step{padding:22px;border-radius:16px;background:#FFFFFF;box-shadow:0 1px 3px rgba(23,23,23,0.05);display:flex;flex-direction:column;gap:10px}
+.num{width:36px;height:36px;border-radius:999px;background:#F4DDE3;color:#8F0E31;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800}
+.step h3,.feat h3{margin:0;font-size:18px;line-height:24px;font-weight:800}
+.step p,.feat p{margin:0;font-size:15px;line-height:22px;color:#4A4A4A}
+.feats{display:grid;gap:12px;margin-top:32px}
+.feat{padding:24px;border-radius:16px;background:#FFFFFF;box-shadow:0 1px 3px rgba(23,23,23,0.05);display:flex;flex-direction:column;gap:10px}
+.ico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.dark{background:#171717;color:#FFFFFF;border-radius:32px;padding:40px 20px;display:grid;gap:32px}
+.dark .sub{color:#BDBDBD}
+.rank{border-radius:16px;background:#262626;padding:8px}
+.rank li{display:flex;align-items:center;gap:12px;min-height:56px;padding:0 12px;border-radius:12px}
+.av{width:36px;height:36px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0}
+.privacy{display:grid;gap:16px;padding:28px;border-radius:16px;background:#DDF1EC;color:#14513F}
+.invite{border-radius:32px;background:#F4DDE3;padding:40px 20px;display:grid;gap:24px}
+.form{display:flex;flex-direction:column;gap:12px}
+.row{display:flex;flex-direction:column;gap:10px}
+.consent{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:20px;color:#4A4A4A;cursor:pointer}
+.consent input{width:20px;height:20px;margin:0;flex-shrink:0;accent-color:#E41D50}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.status{margin:0;min-height:20px;font-size:15px;font-weight:600}
+.status.ok{color:#14513F}.status.err{color:#8F0E31}
+.btn:disabled{opacity:.6;cursor:default}
+.btn:focus-visible,.input:focus-visible,.pg a:focus-visible,.faq summary:focus-visible,.consent input:focus-visible{outline:3px solid #171717;outline-offset:2px}
+.input{min-height:52px;padding:0 16px;border-radius:12px;border:none;background:#FFFFFF;box-shadow:inset 0 0 0 1px #E4DED8;font:inherit;font-size:16px;color:#171717;width:100%}
+.faq{margin-top:28px;display:flex;flex-direction:column;gap:8px}
+.faq details{border-radius:16px;background:#FFFFFF;box-shadow:0 1px 3px rgba(23,23,23,0.05)}
+.faq summary{min-height:60px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:16px;font-weight:700;cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq details p{margin:0;padding:0 20px 20px;font-size:15px;line-height:22px;color:#4A4A4A}
+.foot{padding-top:40px;padding-bottom:48px;border-top:1px solid #E4DED8;display:flex;flex-direction:column;gap:16px;font-size:14px;color:#5F5F5F}
+.foot nav{display:flex;flex-wrap:wrap;gap:4px 16px}
+.foot nav a{min-height:44px;display:flex;align-items:center;color:#4A4A4A;text-decoration:none}
+@media (min-width: 760px){
+.wrap{padding:0 32px}
+.navlinks{display:flex}
+.navcta{margin-left:8px}
+.hero{grid-template-columns:1.1fr 0.9fr;align-items:center;padding-top:56px;padding-bottom:80px}
+.h1{font-size:60px;line-height:62px}
+.lead{font-size:20px;line-height:30px}
+.float{display:flex}
+.sec{padding-top:88px;padding-bottom:88px}
+.h2{font-size:42px;line-height:48px}
+.steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+.feats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.dark{grid-template-columns:1fr 1fr;align-items:center;padding:64px 56px}
+.privacy{grid-template-columns:auto 1fr;align-items:center;padding:32px 40px}
+.invite{grid-template-columns:1fr 1fr;align-items:center;padding:56px}
+.row{flex-direction:row}
+.row .btn{flex-shrink:0}
+.foot{flex-direction:row;align-items:center;justify-content:space-between}
+}
 </style>
 </head>
 <body>
-<main>
-<h1>Pulso</h1>
-<p>Seu treino, pela sua métrica.</p>
-<p style="margin-top:24px;font-size:14px"><a href="/suporte/" style="color:#B8123E">Suporte</a> · <a href="/privacidade/" style="color:#B8123E">Privacidade</a> · <a href="/excluir-conta/" style="color:#B8123E">Excluir conta</a></p>
+<div class="pg">
+
+<header class="wrap nav">
+<a class="logo" href="#topo" aria-label="Pulso, início"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E41D50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg>pulso</a>
+<nav class="navlinks" aria-label="Seções"><a href="#como">Como funciona</a><a href="#recursos">Recursos</a><a href="#desafios">Desafios</a><a href="#perguntas">Perguntas</a></nav>
+<a class="btn btn-p btn-sm navcta" href="#convite">Pedir convite</a>
+</header>
+
+<main id="topo">
+<section class="wrap hero">
+<div>
+<span class="eyebrow">TREINO PERSONALIZADO</span>
+<h1 class="h1">O treino que <em>muda com você</em>.</h1>
+<p class="lead">O Pulso monta seu plano pelo seu objetivo, sua rotina e a métrica que importa para você. A cada 15 dias, revisa como foi e ajusta.</p>
+<div class="ctas"><a class="btn btn-p" href="#convite">Pedir convite</a><a class="btn btn-s" href="#como">Ver como funciona</a></div>
+<p class="fine">Acesso por convite. Já tem um código? Baixe o app e use na primeira tela.</p>
+</div>
+<div class="phonebox">
+<div class="blob" aria-hidden="true"></div>
+<div class="phone" role="img" aria-label="Tela Hoje do app Pulso: treino de força de 45 minutos e meta de calorias do dia">
+<div class="screen" aria-hidden="true">
+<div style="display:flex;align-items:center;justify-content:space-between"><span style="font-size:13px;color:#5F5F5F">Terça, 24/11</span><span class="chip" style="background:#DDF1EC;color:#1F795F">Dia 9 de 15</span></div>
+<span style="font-size:22px;font-weight:800">Hoje</span>
+<div style="border-radius:16px;background:#171717;color:#FFFFFF;padding:14px;display:flex;flex-direction:column;gap:8px">
+<span style="font-size:11px;font-weight:700;letter-spacing:0.06em;color:#BDBDBD">TREINO DO DIA</span>
+<span style="font-size:18px;font-weight:800">Força · inferiores</span>
+<span style="font-size:12px;color:#BDBDBD">6 exercícios · 45 min</span>
+<span style="margin-top:4px;min-height:40px;border-radius:12px;background:#E41D50;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700">Começar treino</span>
+</div>
+<div style="border-radius:16px;background:#FFFFFF;box-shadow:inset 0 0 0 1px #E4DED8;padding:14px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700"><span>Calorias</span><span style="color:#5F5F5F;font-weight:500">1.240 de 2.100 kcal</span></div>
+<div style="height:8px;border-radius:999px;background:#F1ECE8"><div style="width:59%;height:8px;border-radius:999px;background:#E41D50"></div></div>
+</div>
+<div style="border-radius:16px;background:#FFFFFF;box-shadow:inset 0 0 0 1px #E4DED8;padding:14px;display:flex;flex-direction:column;gap:10px">
+<span style="font-size:13px;font-weight:700">Sua semana</span>
+<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;font-size:10px;color:#5F5F5F">
+<span>S<br><b style="display:block;margin-top:4px;height:22px;border-radius:999px;background:#E41D50"></b></span>
+<span>T<br><b style="display:block;margin-top:4px;height:22px;border-radius:999px;background:#F4DDE3"></b></span>
+<span>Q<br><b style="display:block;margin-top:4px;height:22px;border-radius:999px;background:#E41D50"></b></span>
+<span>Q<br><b style="display:block;margin-top:4px;height:22px;border-radius:999px;background:#F1ECE8"></b></span>
+<span>S<br><b style="display:block;margin-top:4px;height:22px;border-radius:999px;background:#F1ECE8"></b></span>
+<span>S<br><b style="display:block;margin-top:4px;height:22px;border-radius:999px;background:#F1ECE8"></b></span>
+<span>D<br><b style="display:block;margin-top:4px;height:22px;border-radius:999px;background:#F1ECE8"></b></span>
+</div>
+</div>
+</div>
+</div>
+<div class="float" aria-hidden="true" style="left:-28px;top:30%"><span class="ico" style="width:36px;height:36px;background:#DDF1EC"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F795F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>Plano ajustado<br>pela sua carga</div>
+<div class="float" aria-hidden="true" style="right:0;bottom:16%"><span class="ico" style="width:36px;height:36px;background:#F4DDE3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E41D50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg></span>Seu treino de<br>hoje vale +10</div>
+</div>
+</section>
+
+<section class="wrap sec" aria-labelledby="t-metrica" style="padding-top:0">
+<h2 class="h2" id="t-metrica">Evoluir não é só o número da balança.</h2>
+<p class="sub">Você escolhe como quer medir o progresso. O plano é ajustado por essa métrica, não por uma meta genérica.</p>
+<div class="metrics"><span>Peso</span><span>Medidas</span><span class="on">Carga nos exercícios</span><span>Ritmo de corrida</span><span>Constância</span><span>Disposição</span></div>
+</section>
+
+<section class="wrap sec" id="como" aria-labelledby="t-como" style="padding-top:0">
+<h2 class="h2" id="t-como">Como funciona</h2>
+<ol class="steps">
+<li class="step"><span class="num">1</span><h3>Conte seu objetivo</h3><p>Objetivo, nível, onde você treina e quantos dias tem na semana. Leva poucos minutos.</p></li>
+<li class="step"><span class="num">2</span><h3>Treine e diga como foi</h3><p>Cada treino termina com um feedback rápido: pesado, leve ou na medida.</p></li>
+<li class="step"><span class="num">3</span><h3>A cada 15 dias, o plano se ajusta</h3><p>O Pulso olha sua métrica e o que você contou, e muda cargas, volume e frequência.</p></li>
+</ol>
+</section>
+
+<section class="wrap sec" id="recursos" aria-labelledby="t-rec" style="padding-top:0">
+<h2 class="h2" id="t-rec">Tudo do dia em uma tela</h2>
+<div class="feats">
+<div class="feat"><span class="ico" style="background:#F4DDE3"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E41D50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6v12M18 6v12M3 9v6M21 9v6M6 12h12"></path></svg></span><h3>Treino do dia, passo a passo</h3><p>Séries, cargas e descanso guiados. Aparelho ocupado? Troque o exercício por uma alternativa equivalente.</p></div>
+<div class="feat"><span class="ico" style="background:#DDF1EC"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F795F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2M5 3 2 6M22 6l-3-3"></path></svg></span><h3>Corrida intervalada guiada</h3><p>Trote e caminhada trocam sozinhos, com som e vibração mesmo com a tela bloqueada. Sem tempo? Faça a versão curta.</p></div>
+<div class="feat"><span class="ico" style="background:#F1ECE8"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 12 22 2M16 2h6v6"></path></svg></span><h3>Calorias pelo seu objetivo</h3><p>Meta diária calculada pelo objetivo e pela intensidade do treino. Registrar refeições é opcional.</p></div>
+<div class="feat"><span class="ico" style="background:#F4DDE3"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E41D50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg></span><h3>Evolução que faz sentido</h3><p>Gráficos da métrica que você escolheu e o histórico de cada ajuste do plano.</p></div>
+</div>
+</section>
+
+<section class="wrap" id="desafios" aria-labelledby="t-des">
+<div class="dark">
+<div>
+<span class="eyebrow" style="color:#F4DDE3">DESAFIOS</span>
+<h2 class="h2" id="t-des" style="margin-top:12px">Compita com quem você quiser, cada um no seu plano.</h2>
+<p class="sub">Você pontua quando cumpre o treino do seu plano. Quem treina 3 vezes por semana disputa de igual para igual com quem treina 5. Descansar não tira pontos.</p>
+</div>
+<ol class="rank" style="margin:0;list-style:none" aria-label="Exemplo de ranking">
+<li><span style="width:20px;font-weight:800;color:#BDBDBD">1</span><span class="av" style="background:#F4DDE3;color:#8F0E31">L</span><span style="flex-grow:1;font-weight:700">Lucas</span><span style="font-weight:800">90 pts</span></li>
+<li><span style="width:20px;font-weight:800;color:#BDBDBD">2</span><span class="av" style="background:#DDF1EC;color:#1F795F">M</span><span style="flex-grow:1;font-weight:700">Marina</span><span style="font-weight:800">80 pts</span></li>
+<li style="background:#E41D50"><span style="width:20px;font-weight:800">3</span><span class="av" style="background:#FFFFFF;color:#171717">J</span><span style="flex-grow:1;font-weight:700">Você</span><span style="font-weight:800">70 pts</span></li>
+<li><span style="width:20px;font-weight:800;color:#BDBDBD">4</span><span class="av" style="background:#3A3A3A;color:#FFFFFF">P</span><span style="flex-grow:1;font-weight:700">Pedro</span><span style="font-weight:800">60 pts</span></li>
+</ol>
+</div>
+</section>
+
+<section class="wrap sec" aria-labelledby="t-priv">
+<div class="privacy">
+<span class="ico" style="width:56px;height:56px;background:#FFFFFF;border-radius:16px"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F795F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+<div><h2 id="t-priv" style="margin:0;font-size:20px;line-height:26px;font-weight:800">Seus dados ficam com você.</h2><p style="margin:6px 0 0;font-size:15px;line-height:22px">Nos desafios, os outros veem só seu nome de exibição, sua foto, seus pontos e a data de cada treino que pontuou. Nunca seus treinos, cargas, peso ou métricas.</p></div>
+</div>
+</section>
+
+<section class="wrap" id="convite" aria-labelledby="t-conv">
+<div class="invite">
+<div>
+<h2 class="h2" id="t-conv">O Pulso está em acesso por convite.</h2>
+<p class="sub">Deixe seu e-mail e avisamos quando abrir sua vaga. Se alguém te chamou para um desafio, peça o código a essa pessoa.</p>
+</div>
+<form class="form" id="lista" aria-label="Entrar na lista de convites" novalidate>
+<div class="row">
+<label for="email" class="sr">E-mail</label>
+<input class="input" id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="seu@email.com" required maxlength="254">
+<button class="btn btn-p" type="submit">Entrar na lista</button>
+</div>
+<div class="hp" aria-hidden="true"><label for="site">Não preencha</label><input id="site" name="site" type="text" tabindex="-1" autocomplete="off"></div>
+<label class="consent"><input id="consent" name="consent" type="checkbox" required><span>Quero receber um e-mail do Pulso quando minha vaga abrir. Uso seu e-mail só para isso e você pode sair da lista quando quiser. Veja a <a href="/privacidade/#lista-de-espera">política de privacidade</a>.</span></label>
+<p class="status" id="lista-status" role="status" aria-live="polite"></p>
+</form>
+</div>
+</section>
+
+<section class="wrap sec" id="perguntas" aria-labelledby="t-faq">
+<h2 class="h2" id="t-faq">Perguntas</h2>
+<div class="faq">
+<details open><summary>Preciso ir à academia?<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></summary><p>Não. Você diz onde treina (academia, casa, parque) e o plano usa só o que você tem.</p></details>
+<details><summary>E se eu perder um treino?<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></summary><p>O plano segue. Na avaliação de 15 dias, o Pulso leva isso em conta e ajusta a frequência se for preciso.</p></details>
+<details><summary>Sou iniciante. Serve para mim?<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></summary><p>Serve. O plano começa pelo seu nível e cada exercício tem instrução e demonstração.</p></details>
+<details><summary>Como consigo um convite?<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></summary><p>Entre na lista acima ou peça um código a quem já usa o Pulso.</p></details>
+</div>
+</section>
 </main>
+
+<footer class="wrap foot">
+<span class="logo" style="font-size:18px"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E41D50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg>pulso</span>
+<nav aria-label="Rodapé"><a href="/privacidade/">Privacidade</a><a href="/termos/">Termos de uso</a><a href="/suporte/">Contato</a><a href="/excluir-conta/">Excluir conta</a></nav>
+<span>© 2026 Pulso · pulsoapp.me</span>
+</footer>
+
+</div>
+<script>
+(function(){
+  var URL='https://chlmqhouenpumyjaxlqb.supabase.co', KEY='sb_publishable_Cm5OdZJz_ltllBZwmYHWNg_AcSQhQaV', VERSAO='site-2026-11-24';
+  var f=document.getElementById('lista'), st=document.getElementById('lista-status');
+  var email=document.getElementById('email'), ok=document.getElementById('consent'), hp=document.getElementById('site');
+  var btn=f.querySelector('button');
+  function msg(t,cls){st.textContent=t;st.className='status '+(cls||'');}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=email.value.trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){msg('Confira o e-mail digitado.','err');email.focus();return;}
+    if(!ok.checked){msg('Marque a caixa de aceite para entrar na lista.','err');ok.focus();return;}
+    btn.disabled=true;msg('Enviando...');
+    fetch(URL+'/rest/v1/rpc/join_waitlist',{method:'POST',headers:{'Content-Type':'application/json','apikey':KEY},
+      body:JSON.stringify({p_email:v,p_consent:true,p_consent_version:VERSAO,p_hp:hp.value})})
+    .then(function(r){if(!r.ok)throw new Error('http');return r.json();})
+    .then(function(res){
+      if(res==='ok'){f.reset();msg('Pronto! Avisamos por e-mail quando sua vaga abrir.','ok');}
+      else if(res==='invalid_email'){msg('Confira o e-mail digitado.','err');}
+      else if(res==='consent_required'){msg('Marque a caixa de aceite para entrar na lista.','err');}
+      else{msg('Muita gente entrando agora. Tente de novo daqui a pouco.','err');}
+    })
+    .catch(function(){msg('Não deu para entrar na lista agora. Tente de novo mais tarde.','err');})
+    .then(function(){btn.disabled=false;});
+  });
+})();
+</script>
 </body>
 </html>
