@@ -26,9 +26,10 @@ h2{margin:0;font-size:22px;font-weight:800}
 .code{padding:20px 16px;border-radius:16px;background:#171717;color:#fff;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
 .code small{font-size:12px;font-weight:700;letter-spacing:.08em;color:#BDBDBD}
 .code strong{font-size:40px;line-height:44px;font-weight:800;letter-spacing:.18em;padding-left:.18em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .note{margin:0;font-size:15px;line-height:22px;color:#4A4A4A}
-.btn{min-height:56px;border:0;border-radius:12px;background:#E41D50;color:#fff;font-size:17px;font-weight:700;font-family:inherit;text-decoration:none;display:flex;align-items:center;justify-content:center;cursor:pointer;width:100%}
-.btn:hover{background:#C9163F;color:#fff}
+.btn{min-height:56px;border:0;border-radius:12px;background:#C8194A;color:#fff;font-size:17px;font-weight:700;font-family:inherit;text-decoration:none;display:flex;align-items:center;justify-content:center;cursor:pointer;width:100%}
+.btn:hover{background:#A9123C;color:#fff}
 ol{margin:0;padding:16px;list-style:none;border-radius:16px;background:#fff;box-shadow:inset 0 0 0 1px #E4DED8;display:flex;flex-direction:column;gap:14px}
 li{display:flex;gap:12px;font-size:14px;line-height:20px}
 li .n{width:28px;height:28px;flex-shrink:0;border-radius:999px;background:#F4DDE3;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#8F0E31}
@@ -118,7 +119,8 @@ li .n{width:28px;height:28px;flex-shrink:0;border-radius:999px;background:#F4DDE
   }
   function ended(c) {
     var when = ddmm(c.end_date);
-    var txt = String(c.name || "") + (when ? " · encerrado em " + when : " · encerrado") +
+    var estado = c.state === "cancelado" ? " · foi cancelado" : (when ? " · encerrado em " + when : " · encerrado");
+    var txt = String(c.name || "") + estado +
       ". No app dá para criar um desafio novo e chamar quem você quiser.";
     show([panel(ICON_FLAG, "fim", "Este desafio terminou", txt, download())], true);
   }
@@ -133,8 +135,10 @@ li .n{width:28px;height:28px;flex-shrink:0;border-radius:999px;background:#F4DDE
 
     var box = el("div", "code");
     box.appendChild(el("small", null, "CÓDIGO DO DESAFIO"));
-    var strong = el("strong", null, code);
-    strong.setAttribute("aria-label", "Código " + code.split("").join(" "));
+    var strong = el("strong");
+    var vis = el("span", null, code); vis.setAttribute("aria-hidden", "true");
+    var sr = el("span", "sr", "Código " + code.split("").join(" "));
+    strong.appendChild(vis); strong.appendChild(sr);
     box.appendChild(strong);
 
     var note = el("p", "note", "Cada um pontua seguindo o próprio plano de treino. Descansar não tira pontos.");
