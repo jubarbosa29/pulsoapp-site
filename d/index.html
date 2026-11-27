@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src https://chlmqhouenpumyjaxlqb.supabase.co; base-uri 'none'; form-action 'none'">
+<meta name="theme-color" content="#FAF9F6">
+<title>Convite para desafio | Pulso</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#FAF9F6;color:#171717;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%}
+body.card{background:#F1ECE8}
+a{color:#B8123F}
+a:hover{color:#8F0E31}
+:focus-visible{outline:3px solid #171717;outline-offset:2px}
+.wrap{width:100%;max-width:480px;margin:0 auto;padding:0 16px}
+.brand{display:flex;align-items:center;gap:8px;padding:20px 0;font-size:20px;font-weight:800;letter-spacing:-.01em}
+.brand svg{flex-shrink:0}
+.stack{display:flex;flex-direction:column;gap:20px;padding:8px 0 40px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;color:#B8123F}
+h1{margin:8px 0;font-size:32px;line-height:38px;font-weight:800;overflow-wrap:anywhere}
+h2{margin:0;font-size:22px;font-weight:800}
+.sub{font-size:16px;color:#4A4A4A;margin:0}
+.code{padding:20px 16px;border-radius:16px;background:#171717;color:#fff;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.code small{font-size:12px;font-weight:700;letter-spacing:.08em;color:#BDBDBD}
+.code strong{font-size:40px;line-height:44px;font-weight:800;letter-spacing:.18em;padding-left:.18em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.note{margin:0;font-size:15px;line-height:22px;color:#4A4A4A}
+.btn{min-height:56px;border:0;border-radius:12px;background:#C8194A;color:#fff;font-size:17px;font-weight:700;font-family:inherit;text-decoration:none;display:flex;align-items:center;justify-content:center;cursor:pointer;width:100%}
+.btn:hover{background:#A9123C;color:#fff}
+ol{margin:0;padding:16px;list-style:none;border-radius:16px;background:#fff;box-shadow:inset 0 0 0 1px #E4DED8;display:flex;flex-direction:column;gap:14px}
+li{display:flex;gap:12px;font-size:14px;line-height:20px}
+li .n{width:28px;height:28px;flex-shrink:0;border-radius:999px;background:#F4DDE3;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#8F0E31}
+.panel{margin-top:20px;padding:20px 16px;border-radius:16px;background:#FAF9F6;display:flex;flex-direction:column;gap:14px}
+.panel .btn{min-height:52px;font-size:16px}
+.panel p{margin:0;font-size:14px;line-height:20px;color:#4A4A4A;overflow-wrap:anywhere}
+.badge{width:56px;height:56px;border-radius:999px;background:#F1ECE8;display:flex;align-items:center;justify-content:center}
+.loading{padding:24px 0;color:#4A4A4A;font-size:16px}
+@media (prefers-reduced-motion:no-preference){.loading{animation:p 1.2s ease-in-out infinite}@keyframes p{50%{opacity:.5}}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="brand">
+<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E41D50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+<span>pulso</span>
+</header>
+<main id="conteudo" aria-live="polite" aria-busy="true">
+<p class="loading">Carregando convite…</p>
+</main>
+</div>
+<noscript><div class="wrap"><p class="note">Ative o JavaScript para ver o convite, ou abra o app em Desafios › Entrar com código.</p></div></noscript>
+<script>
+(function () {
+  var SUPABASE_URL = "https://chlmqhouenpumyjaxlqb.supabase.co";
+  var ANON_KEY = "sb_publishable_Cm5OdZJz_ltllBZwmYHWNg_AcSQhQaV";
+  var STORE_URL = "https://apps.apple.com/app/id6836325256";
+  var CODE_RE = /^[A-HJ-KM-NP-Z2-9]{6}$/;
+  var root = document.getElementById("conteudo");
+  var NS = "http://www.w3.org/2000/svg";
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function icon(paths) {
+    var s = document.createElementNS(NS, "svg");
+    s.setAttribute("aria-hidden", "true");
+    s.setAttribute("width", "26"); s.setAttribute("height", "26");
+    s.setAttribute("viewBox", "0 0 24 24"); s.setAttribute("fill", "none");
+    s.setAttribute("stroke", "#4A4A4A"); s.setAttribute("stroke-width", "2");
+    s.setAttribute("stroke-linecap", "round"); s.setAttribute("stroke-linejoin", "round");
+    paths.forEach(function (d) {
+      var p = document.createElementNS(NS, "path");
+      p.setAttribute("d", d); s.appendChild(p);
+    });
+    return s;
+  }
+  function download() {
+    var a = el("a", "btn", "Baixar o Pulso");
+    a.href = STORE_URL;
+    return a;
+  }
+  function ddmm(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso || ""));
+    return m ? m[3] + "/" + m[2] : "";
+  }
+  function show(nodes, card) {
+    document.body.className = card ? "card" : "";
+    root.textContent = "";
+    nodes.forEach(function (n) { root.appendChild(n); });
+    root.setAttribute("aria-busy", "false");
+  }
+  function panel(iconPaths, id, title, text, extra) {
+    var s = el("section", "panel");
+    s.setAttribute("aria-labelledby", id);
+    var b = el("span", "badge"); b.appendChild(icon(iconPaths));
+    var h = el("h2", null, title); h.id = id;
+    s.appendChild(b); s.appendChild(h); s.appendChild(el("p", null, text));
+    if (extra) s.appendChild(extra);
+    return s;
+  }
+  var ICON_SEARCH = ["M21 21l-4.3-4.3", "M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0z"];
+  var ICON_FLAG = ["M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z", "M4 22v-7"];
+
+  function notFound() {
+    show([panel(ICON_SEARCH, "nf", "Desafio não encontrado",
+      "Confira o código com quem te chamou. Ele tem 6 letras e números.", download())], true);
+  }
+  function failed(retry) {
+    var b = el("button", "btn", "Tentar de novo");
+    b.type = "button"; b.addEventListener("click", retry);
+    show([panel(ICON_SEARCH, "er", "Não deu para carregar o convite",
+      "Verifique sua conexão e tente de novo.", b)], true);
+  }
+  function ended(c) {
+    var when = ddmm(c.end_date);
+    var estado = c.state === "cancelado" ? " · foi cancelado" : (when ? " · encerrado em " + when : " · encerrado");
+    var txt = String(c.name || "") + estado +
+      ". No app dá para criar um desafio novo e chamar quem você quiser.";
+    show([panel(ICON_FLAG, "fim", "Este desafio terminou", txt, download())], true);
+  }
+  function found(c, code) {
+    var head = el("div");
+    head.appendChild(el("span", "eyebrow", "TE CHAMARAM PARA UM DESAFIO"));
+    head.appendChild(el("h1", null, String(c.name || "")));
+    var tipo = c.type === "constancia" ? "Constância" : String(c.type || "");
+    var dias = c.duration_days + (c.duration_days === 1 ? " dia" : " dias");
+    var verbo = c.state === "ao_vivo" ? "começou " : "começa ";
+    head.appendChild(el("p", "sub", tipo + " · " + dias + " · " + verbo + ddmm(c.start_date)));
+
+    var box = el("div", "code");
+    box.appendChild(el("small", null, "CÓDIGO DO DESAFIO"));
+    var strong = el("strong");
+    var vis = el("span", null, code); vis.setAttribute("aria-hidden", "true");
+    var sr = el("span", "sr", "Código " + code.split("").join(" "));
+    strong.appendChild(vis); strong.appendChild(sr);
+    box.appendChild(strong);
+
+    var note = el("p", "note", "Cada um pontua seguindo o próprio plano de treino. Descansar não tira pontos.");
+
+    var list = el("ol");
+    var li1 = el("li"); li1.appendChild(el("span", "n", "1"));
+    li1.appendChild(el("span", null, "O Pulso está em acesso por convite. Se ainda não tem conta, peça um código a quem te chamou."));
+    var li2 = el("li"); li2.appendChild(el("span", "n", "2"));
+    var t2 = el("span", null, "Abra o app em "); var bb = el("b", null, "Desafios › Entrar com código");
+    t2.appendChild(bb); t2.appendChild(document.createTextNode(" e digite o código acima."));
+    li2.appendChild(t2);
+    list.appendChild(li1); list.appendChild(li2);
+
+    var wrap = el("div", "stack");
+    [head, box, note, download(), list].forEach(function (n) { wrap.appendChild(n); });
+    show([wrap], false);
+  }
+
+  function load() {
+    var raw = new URLSearchParams(location.search).get("c") || "";
+    var code = raw.trim().toUpperCase();
+    if (!CODE_RE.test(code)) { notFound(); return; }
+    root.setAttribute("aria-busy", "true");
+    fetch(SUPABASE_URL + "/rest/v1/rpc/challenge_public", {
+      method: "POST",
+      headers: { "apikey": ANON_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ p_code: code }),
+      referrerPolicy: "no-referrer"
+    }).then(function (r) {
+      if (!r.ok) throw new Error("http");
+      return r.json();
+    }).then(function (rows) {
+      var c = Array.isArray(rows) ? rows[0] : null;
+      if (!c) return notFound();
+      if (c.state === "encerrado" || c.state === "cancelado") return ended(c);
+      if (c.state === "agendado" || c.state === "ao_vivo") return found(c, code);
+      notFound();
+    }).catch(function () { failed(load); });
+  }
+  load();
+})();
+</script>
+</body>
+</html>
